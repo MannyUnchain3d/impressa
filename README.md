@@ -1,4 +1,4 @@
-# Impressa - AI Image Processing SaaS Platform
+# Impressa - AI-Powered Image Processing SaaS Platform
 
 ## Features
 - **Image Restoration:** Restore damaged or low-quality images.
