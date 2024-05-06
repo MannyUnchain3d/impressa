@@ -39,9 +39,9 @@ const MobileNav = () => {
             <SheetContent className="sheet-content sm:w-64">
               <>
                 <Image
-                  src="/assets/images/logo-icon.svg"
+                  src="/assets/images/logo-text.svg"
                   alt="logo"
-                  width={51}
+                  width={152}
                   height={23}
                 />
 
