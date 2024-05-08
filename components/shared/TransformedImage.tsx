@@ -1,4 +1,12 @@
-const TransformedImage = () => {
+const TransformedImage = ({
+  image,
+  type,
+  title,
+  transformationConfig,
+  isTransforming,
+  setIsTransforming,
+  hasDownload = false,
+}: TransformedImageProps) => {
   return <div>TransformedImage</div>;
 };
 
