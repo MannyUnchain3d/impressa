@@ -93,7 +93,7 @@ export async function getImageById(imageId: string) {
   }
 }
 
-// GET IMAGES
+// GET ALL IMAGES
 export async function getAllImages({
   limit = 9,
   page = 1,
