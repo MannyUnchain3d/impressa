@@ -110,19 +110,19 @@ const TransformationForm = ({
 
       if (action === "Add") {
         try {
-          const updateImage = await addImage({
+          const newImage = await addImage({
             image: imageData,
             userId,
             path: "/",
           });
 
-          if (updateImage) {
+          if (newImage) {
             form.reset();
             setImage(data);
-            router.push("/transformations/${updateImage._id}");
+            router.push(`/transformations/${newImage._id}`);
           }
         } catch (error) {
-          console.error(error);
+          console.log(error);
         }
       }
 
@@ -138,10 +138,10 @@ const TransformationForm = ({
           });
 
           if (updatedImage) {
-            router.push("/transformations/${updatedImage._id}");
+            router.push(`/transformations/${updatedImage._id}`);
           }
         } catch (error) {
-          console.error(error);
+          console.log(error);
         }
       }
     }
@@ -177,13 +177,13 @@ const TransformationForm = ({
       setNewTransformation((prevState: any) => ({
         ...prevState,
         [type]: {
-          ...prevState[type],
+          ...prevState?.[type],
           [fieldName === "prompt" ? "prompt" : "to"]: value,
         },
       }));
+    }, 1000)();
 
-      return onChangeField(value);
-    }, 1000);
+    return onChangeField(value);
   };
 
   const onTransformHandler = async () => {
@@ -228,6 +228,7 @@ const TransformationForm = ({
                 onValueChange={(value) =>
                   onSelectFieldHandler(value, field.onChange)
                 }
+                value={field.value}
               >
                 <SelectTrigger className="select-field">
                   <SelectValue placeholder="Select size" />
